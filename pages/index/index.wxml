@@ -1,0 +1,80 @@
+<view class="header">
+  <input 
+    type="text" 
+    class="header-input"
+    placeholder="为了你，我愿意热爱整个世界"
+    placeholder-class="header-input-placeholder"
+    bindinput="handleInputChange"
+  />
+  <icon 
+  type="search" 
+  class="header-input-icon"
+  size="13"
+  wx:if="{{showIcon}}"
+/>
+</view>
+<view class="navigator">
+  <view 
+    class="navigator-item"
+    data-type="recommend"
+    bindtap="changeType"
+  >
+    <image
+      class="navigator-img" 
+      src="../../resources/推荐@2x.png"
+    />
+      推荐
+    <view 
+      hidden="{{type !== 'recommend'}}"
+      class="navigator-active navigator-active-recommend"
+    />
+  </view>
+  <view 
+    class="navigator-item"
+    data-type="path"
+    bindtap="changeType"
+    >
+    <image 
+      class="navigator-img" 
+      src="../../resources/路径@2x.png"
+    />
+    智慧
+    <view 
+      hidden="{{type !== 'path'}}"
+      class="navigator-active navigator-active-path"
+    />
+  </view>
+  <view 
+   class="navigator-item"
+   data-type="project"
+   bindtap="changeType"
+   >
+    <image 
+      class="navigator-img" 
+      src="../../resources/实战@2x.png"
+    />
+    历史
+    <view 
+      hidden="{{type !== 'project'}}"
+      class="navigator-active navigator-active-project"
+    />
+  </view>
+  <view 
+   class="navigator-item"
+   data-type="activity"
+   bindtap="changeType"
+   >
+    <image 
+      class="navigator-img" 
+      src="../../resources/课程@2x.png"
+    />
+    小说
+    <view 
+    hidden="{{type !== 'activity'}}"
+      class="navigator-active navigator-active-activity"
+    />
+  </view>
+</view>
+
+<include src='./recommend.wxml' />
+<include src='./activity.wxml' />
